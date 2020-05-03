@@ -1,5 +1,7 @@
-const artStage = document.querySelector('div[data-hook="art_stage"]')
-
+const runScript = () => {
+    const artStage = document.querySelector('div[data-hook="art_stage"]')
+    if (artStage) addDownloadButton()
+}
 const addDownloadButton = () => {
     const downloadCSS = `
         .downloadCSS {
@@ -27,7 +29,6 @@ const addDownloadButton = () => {
     document.head.appendChild(downloadStylesheet)
 
     const image = document.querySelector('div[data-hook="art_stage"]').querySelector('img')
-    //image.parentNode.style.position = "relative" //make sure we can absolutely position the button
     image.parentElement.classList.toggle('downloadCSS')
     const downloadLink = document.createElement('a')
 
@@ -41,10 +42,7 @@ const addDownloadButton = () => {
     xhr.open('get', image.src)
     xhr.responseType = "blob"
     xhr.onload = (response) => {
-        console.log("Fetched image", response)
         const imageFile = new Blob([xhr.response], { type: 'application/octet-stream'})
-        console.log(imageFile)
-
         downloadLink.textContent = "Download image"
         downloadLink.style.tr
         image.parentNode.appendChild(downloadLink)
@@ -53,5 +51,4 @@ const addDownloadButton = () => {
     }
     xhr.send()
 }
-
-if (artStage) addDownloadButton()
+document.addEventListener("DOMContentLoaded", runScript)

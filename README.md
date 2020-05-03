@@ -10,6 +10,7 @@ Use a script injection tool or similar. I've only tested with [CSS and Javascrip
 https://chrome.google.com/webstore/detail/css-and-javascript-inject/ckddknfdmcemedlmmebildepcmneakaa). If you know of any issues with that plugin, please let me know.
 
 - Open DeviantArt.
+- Open your script injection plugin
 - Paste downloadButton.js into the Javascript tab
 - Paste downloadButton.css into the CSS tab
 - Hover the image, and the download button should become visible

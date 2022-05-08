@@ -6,7 +6,7 @@ const addDownloadButton = () => {
     const image = document.querySelector('div[data-hook="art_stage"]').querySelector('img')
     image.parentElement.classList.toggle('downloadCSS')
     const downloadLink = document.createElement('a')
-    const userName = document.querySelector("a[data-username]").dataset.username.toLowerCase()
+    const userName = document.querySelector('*[data-hook="deviation_meta"] a[data-username]').dataset.username.toLowerCase()
     const code = image.src.match(/\/f\/[\w-_]+\/([\w_]+)-/)?.[1] ?? ""
     const title = document.querySelector('h1[data-hook="deviation_title"').innerText.toLowerCase().replace(/\W/g, "_")
     const fileName = `${title}_by_${userName}-${code}`

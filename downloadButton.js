@@ -6,11 +6,10 @@ const addDownloadButton = () => {
     const image = document.querySelector('div[data-hook="art_stage"]').querySelector('img')
     image.parentElement.classList.toggle('downloadCSS')
     const downloadLink = document.createElement('a')
-    const currentPath = window.location.pathname.slice(1) //remove initial forwardslash
-    const pathParts = currentPath.split('/')
-    const userName = pathParts[0]
-    const artName = pathParts[2]
-    const fileName = artName.replace(' ', '_') + "_by_" + userName
+    const userName = document.querySelector("a[data-username]").dataset.username.toLowerCase()
+    const code = image.src.match(/\/f\/[\w-_]+\/([\w_]+)-/)?.[1] ?? ""
+    const title = document.querySelector('h1[data-hook="deviation_title"').innerText.toLowerCase().replace(/\W/g, "_")
+    const fileName = `${title}_by_${userName}-${code}`
     const xhr = new XMLHttpRequest()
     xhr.open('get', image.src)
     xhr.responseType = "blob"

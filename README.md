@@ -1,16 +1,19 @@
 # Deviant Download
 
 ## Why?
-DeviantArt now forces Eclipse layout on users. There are several issues with Eclipse at the moment, but the one this script solves is images not having a download button, and image downloads defaulting to a random string as filename. Previously, filenames would be something akin to ```[title]-[randomstring]_by_[username]```.
+DeviantArt does not always provide a download button on a given image, which makes downloading that image slightly more tedious, as you must manually open the image and name the file yourself, which might not always be what you want. For instance, if you download an image in a series, the name typically contains a number which means the list will naturally sort correctly, while naming the file yourself usually ends up messing up the order.
 
-That functionality is back. Enjoy :)
+To fix this, this tool creates a download link which becomes visible when you hover over an image, then gives it a filename using this system, which is identical to the system deviantart uses: ```[title]_by_[userName]-[random_code]```.
+
+Enjoy!
 
 ## How to use:
-Use a script injection tool or similar. I've only tested with [CSS and Javascript Injection by 孙国强](
-https://chrome.google.com/webstore/detail/css-and-javascript-inject/ckddknfdmcemedlmmebildepcmneakaa). If you know of any issues with that plugin, please let me know.
+Use a script injection tool or similar. [User JavaScript and CSS by tenRabbits](
+https://chrome.google.com/webstore/detail/user-javascript-and-css/nbhcbdghjpllgmfilhnhkllmkecfmpld) is what I personally use. If you know of any issues with that plugin, please let me know.
 
-- Open DeviantArt.
+- Open an image page on DeviantArt.
 - Open your script injection plugin
 - Paste downloadButton.js into the Javascript tab
 - Paste downloadButton.css into the CSS tab
-- Hover the image, and the download button should become visible
+- Hover the main image, and the download button should become visible.
+- Click the button to open the download dialog, where the filename should be prefilled correctly.
